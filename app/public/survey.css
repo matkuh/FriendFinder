@@ -1,6 +1,6 @@
 .slider {
     -webkit-appearance: none;
-    width: 100%;
+    width: 70%;
     height: 15px;
     border-radius: 5px;   
     background: #d3d3d3;
@@ -8,6 +8,7 @@
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
+    margin-left:15%;
   }
   
 .slider::-webkit-slider-thumb {
@@ -27,7 +28,20 @@
     background: #4CAF50;
     cursor: pointer;
   }
+h2 {
+  text-align: center;
+}
 
 body {
-    margin: 25px 50px 25px;
+  align-content: center;
 }
+.form-control {
+  margin-left: 20px;
+  width: 50%;
+}
+
+.btn {
+  margin-left: 10%;
+  margin-top: 3%;
+}
+

@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Survey</title>
+    <script src="jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
 
-    <a class="btn btn-primary btn-lg" href="survey.html" role="button">Survey</a>
+    <a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
+
+    <br>
+    <br>
 
     <form>
         <div class="row">
@@ -26,58 +30,63 @@
         </div>
     </form>
 
-    <h2>Are you Happy?</h2>
+    <br>
+
+
+    <h2>How happy are you?</h2>
     <div class="slidecontainer">
-        <input type="range" min="0" max="5" default="0" value="50" class="slider" id="q1">
+        <input type="range" min="0" max="5" value="0" class="slider" id="q1">
     </div>
 
-    <h2></h2>
+    <h2>Do you show this happiness?</h2>
     <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="50" class="slider" id="q2">
+        <input type="range" min="0" max="5" value="0" class="slider" id="q2">
     </div>
 
-    <h2></h2>
+    <h2>How into sports are you?</h2>
     <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="50" class="slider" id="q3">
+        <input type="range" min="0" max="5" value="0" class="slider" id="q3">
     </div>
 
-    <h2></h2>
+    <h2>Do you like bars/clubs?</h2>
     <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="50" class="slider" id="q4">
+        <input type="range" min="0" max="5" value="0" class="slider" id="q4">
     </div>
 
-    <h2></h2>
+    <h2>Do you like animals?</h2>
     <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="50" class="slider" id="q5">
+        <input type="range" min="0" max="5" value="0" class="slider" id="q5">
     </div>
 
-    <h2></h2>
+    <h2>Are you liberal or conservative? (1 = very liberal, 5 = very conservative)</h2>
     <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="50" class="slider" id="q6">
+        <input type="range" min="0" max="5" value="0" class="slider" id="q6">
     </div>
 
-    <h2></h2>
+    <h2>Do you like to go out to eat?</h2>
     <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="50" class="slider" id="q7">
+        <input type="range" min="0" max="5" value="0" class="slider" id="q7">
     </div>
 
-    <h2></h2>
+    <h2>How often do you exercise?</h2>
     <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="50" class="slider" id="q8">
+        <input type="range" min="0" max="5" value="0" class="slider" id="q8">
     </div>
 
-    <h2></h2>
+    <h2>How often do you watch TV?</h2>
     <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="50" class="slider" id="q9">
+        <input type="range" min="0" max="5" value="0" class="slider" id="q9">
     </div>
 
-    <h2></h2>
+    <h2>How often do you eat candy?</h2>
     <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="50" class="slider" id="q10">
+        <input type="range" min="0" max="5" value="0" class="slider" id="q10">
     </div>
+
+    <br>
 
     <div class="col-auto">
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle"
+        <button type="submit" class="btnsubmit btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle"
                 aria-hidden="true"></i>
             Submit</button>
     </div>
@@ -91,8 +100,8 @@
                     <h2 class="modal-title"><strong>Best Match</strong></h2>
                 </div>
                 <div class="modal-body">
-                    <h2 id="match-name"></h2>
-                    <img id="match-img"
+                    <h2 id="matchName"></h2>
+                    <img id="matchImg"
                         src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
                 </div>
                 <div class="modal-footer">
@@ -102,6 +111,8 @@
 
         </div>
     </div>
+
+    <br>
 
     <script type="text/javascript">
         var userData = {
@@ -120,6 +131,14 @@
                 $("#q10").val()
             ]
         };
+
+        $.post("/api/friends", userData, function (data) {
+
+            $("#matchName").text(data.name);
+            $("#matchImg").attr("src", data.photo);
+
+            $("#results-modal").modal("toggle");
+        })
 
     </script>
 

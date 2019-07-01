@@ -1,14 +1,14 @@
 var path = require("path")
 
-module.exports = function(app) {
+module.exports = function (app) {
 
-app.get("/survey", function (req, res) {
-    if(err){
-    res.sendFile(path.join(__dirname, "home.html"));
-    }
-    else {
-    res.sendFile(path.join(__dirname, "survey.html"));
-    }
-});
+    app.get("/", function (req, res) {
+        res.sendFile(path.join(__dirname, "../public/index.html"));
+    });
+
+    app.get("/survey", function (req, res) {
+            res.sendFile(path.join(__dirname, "../public/survey.html"));
+        
+    });
 
 }
