@@ -29,7 +29,7 @@ module.exports = function (app) {
         }
         friendsData.push(userInput);
 
-        var bestMatch = totalDifference.sort(function (a, b) { return a.diff - b.diff });
+        var bestMatch = totalDifference.sort(function (a, b) {return a.diff - b.diff });
 
         res.json(bestMatch[0]);
         console.log(bestMatch)

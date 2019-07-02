@@ -30,6 +30,7 @@
 
     <br>
 
+    <p id="directions">Choose your answer from 0-5 (0 on the left, 5 on the right) on how you feel :) </p>
 
     <h2>How happy are you?</h2>
     <div class="slidecontainer">
@@ -38,7 +39,7 @@
     </div>
 
 
-    <h2>Do you show this happiness?</h2>
+    <h2>Do you show your emotions?</h2>
     <div class="slidecontainer">
         <input type="range" min="0" max="5" value="0" class="slider" id="q2">
     </div>
@@ -99,8 +100,8 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <h2 class="modal-title"><strong>Best Match</strong></h2>
-                    <h2 id="matchName1"></h2>
+                    <h3 class="modal-title"><strong>Best Match</strong></h3>
+                    <h3 id="matchName1"></h3>
                     <img id="matchImg" src="" alt="">
                 </div>
                 <div class="modal-footer">
@@ -122,6 +123,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script type="text/javascript">
+        
+        
         $(document).ready(function () {
             $("#submit").on("click", function (event) {
                 event.preventDefault()
@@ -157,12 +160,6 @@
 
         })
 
-        // function generateLabel(){
-
-        //     $(this).attr("value", $(this).val())
-        //     $(`#label${$(this).data-pos}`).text(`(${$(this).val()})`);
-
-    // }
     </script>
 
 </body>

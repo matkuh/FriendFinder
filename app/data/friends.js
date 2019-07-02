@@ -20,7 +20,7 @@ var friends =
 
         {
             "name": "Bobby",
-            "photo": "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/512x512/WIN429360.png",
+            "photo": "https://pbs.twimg.com/profile_images/989701284327444482/SRtL5DTO_400x400.jpg",
             "scores": [
                 3,
                 1,

@@ -30,6 +30,7 @@
   }
 h2 {
   text-align: center;
+  color: white;
 }
 
 body {
@@ -43,5 +44,25 @@ body {
 .btn {
   margin-left: 10%;
   margin-top: 3%;
+}
+h1 {
+  text-align: center;
+}
+
+.btnsurvey {
+  text-align: center;
+}
+body {
+  margin: 10px;
+  background-image: url(https://projectsanctuary.us/wp-content/uploads/2016/08/Kumbaya-holdinghands-Medium.jpg);
+  background-size: 100%;
+  background-attachment: fixed;
+}
+.jumbotron {
+  background-color: white;
+}
+
+#directions {
+  text-align: center;
 }
 
