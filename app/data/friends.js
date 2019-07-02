@@ -3,7 +3,7 @@ var friends =
     [
         {
             "name": "Billy",
-            "photo": "",
+            "photo": "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/512x512/WIN429360.png",
             "scores": [
                 3,
                 5,
@@ -20,7 +20,7 @@ var friends =
 
         {
             "name": "Bobby",
-            "photo": "",
+            "photo": "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/512x512/WIN429360.png",
             "scores": [
                 3,
                 1,
@@ -35,4 +35,4 @@ var friends =
             ]
         }
     ]
-
+module.exports = friends;
